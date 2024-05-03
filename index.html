@@ -1,6 +1,3 @@
-CLASE 5 Estilos
-
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -8,6 +5,9 @@ CLASE 5 Estilos
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Favicon -->
+    <link rel="icon" href="./static/img/favicon.jpeg" type="image/x-icon">
+
     <!-- CSS externo -->
     <link rel="stylesheet" href="./static/css/style.css">
     
@@ -15,64 +15,48 @@ CLASE 5 Estilos
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
-    <title>Horóscopo sentí tu suerte, vivir en positivo</title>
+    <title>Proyecto Final - Codo a Codo</title>
    
     <!-- Enlace a Font Awesome -->
     <script src="https://kit.fontawesome.com/fa04600604.js" crossorigin="anonymous"></script></head>
-
-    <!-- CSS interno -->
-<!--     <style>
-        /* CSS interno */
-        h1 {
-            color: blue;
-            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
-            ;
-        }
-    </style> -->
-
-
     
 <body>
     <header>
-        <!-- Selectores básicos div id -->
-        <div class="header_logo logo-color">  
-            <a href="">
-            <i class="fa-solid fa-moon "></i>
-            </a>
-        </div>      
+        <nav class="navbar">
+            <div class="logo">
+                <a href="./index.html"><i class="fa-solid fa-film"></i>Peliculas</a>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="#">Tendencias</a></li>
+                <li><a href="#">Catálogo</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- notacion bem (block element modifier) bock_element-modifier -->
     <main>
         <section class="banner">
-            <div class="banner_content">
-                <h1 >Tu Horóscopo Hoy</h1> <!-- CSS en línea --> <!-- style="font-size: 50px;" -->
-                <h2>Sentí tu suerte, viví en positivo</h2>
-                <br><br>
-                <!-- enlace boton de inicio -->
-                <a href="#horoscopes" class="scroll_button">Pedí tu horoscopo</a>
-            </div>
             <!-- Video de fondo -->
             <video autoplay loop muted class="video_background">
                 <source src="./static/video/space_mid.mp4" type="video/mp4">
                 Tu navegador no soporta la etiqueta de video.
             </video>
-        </section>
 
-  
-
-        <section id="horoscopes">
-            <div class="horoscope_card">
-                <h2>Horóscopo de Aries</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod volutpat nulla, vitae lacinia lorem ullamcorper vel.</p>
+            <div class="banner_content">
+                <ul class="tendencias">
+                    <li><a href="#">Rapidos y Furiosos</a></li>
+                    <li><a href="#">Deadpool vs Wolverine</a></li>
+                    <li><a href="#">Muchachos</a></li>
+                    <li><a href="#">peli 1</a></li>
+                    <li><a href="#">peli 2</a></li>
+                    <li><a href="#">peli 3</a></li>
+                    <li><a href="#">peli 4</a></li>
+                    <li><a href="#">peli 5</a></li>
+                    <li><a href="#">peli 6</a></li>
+                </ul>
             </div>
-            <div class="horoscope_card card-color">
-                <h2>Horóscopo de Aries</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod volutpat nulla, vitae lacinia lorem ullamcorper vel.</p>
-            </div>
-            <!-- Agregar más horóscopos según sea necesario -->
         </section>
-
     </main>
 
     <footer></footer>
