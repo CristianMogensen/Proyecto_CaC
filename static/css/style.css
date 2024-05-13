@@ -7,8 +7,8 @@
     --secondary-color:#ffc098;
     --third-color:#db4648;
     --third-bis-color:#db4648f2;
-    --bg-color:#181419;
-    --bg-input-color:#4f31572c;
+    --bg-nav-color:#181419;
+    --bg-color:#4f31572c;
     --white-color: #fdf5ef;
 
     /* Fuentes */
@@ -24,7 +24,7 @@
 /* General */
 
 * {
-    /*box-sizing: border-box;*/
+    box-sizing: border-box;
     /* Se quita el margen de los elementos, para que la barra de navegación
     aparezca en el comienzo del html (arriba de la ventana): */
     margin: 0 0;
@@ -46,7 +46,7 @@ li {
 
 /* Estilos para la barra de navegación */
 header {
-    background-color: var(--bg-color); /* Color de fondo */
+    background-color: var(--bg-nav-color); /* Color de fondo */
     color: var(--white-color); /* Color del texto */
 }
 
@@ -76,6 +76,15 @@ header {
 
 
 /* Body */
+
+body {
+    background-color: var(--bg-color); /* Color de fondo (auxiliar) */
+}
+
+.banner {
+    position: relative;
+
+}
 
 .video_background {
     /* Posiciona el video al comienzo para que ocupe toda la ventana */
