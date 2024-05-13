@@ -1,87 +1,92 @@
+/* Estilos generales para todos los html's */
+
+
 :root{
+    /* Paleta de colores */
     --primary-color:#9f3647;
-    --bg-color:#181419;
     --secondary-color:#ffc098;
     --third-color:#db4648;
     --third-bis-color:#db4648f2;
+    --bg-color:#181419;
     --bg-input-color:#4f31572c;
     --white-color: #fdf5ef;
-    /* fuentes */
-    --primary-font:'Nunito', sans-serif;
+
+    /* Fuentes */
+    --primary-font: "Poetsen One", sans-serif;
+    --secondary-font: Verdana, sans-serif;
+
+    font-family: var(--primary-font, --secondary-font);
+    font-weight: 400;
+    font-style: normal;
+    color: var(--primary-color);
 }
+
+/* General */
+
+* {
+    /*box-sizing: border-box;*/
+    /* Se quita el margen de los elementos, para que la barra de navegación
+    aparezca en el comienzo del html (arriba de la ventana): */
+    margin: 0 0;
+    z-index: 10; /* Se ponen los elementos encima del video de fondo */
+}
+
+/* Estilo de los links */
+a {
+    text-decoration: none; /* Se quita el subrayado */
+    text-decoration-color: inherit; /* Se hereda el color de la fuente del elemento padre */
+    color: inherit; /* Se hereda el color de la fuente del elemento padre */
+}
+
+li {
+    list-style-type: none; /* Quita los estilos de lista */
+}
+
+/* Header */
 
 /* Estilos para la barra de navegación */
 header {
-    background-color: #333; /* Color de fondo */
-    color: white; /* Color del texto */
-    padding: 10px 20px; /* Espaciado interno */
+    background-color: var(--bg-color); /* Color de fondo */
+    color: var(--white-color); /* Color del texto */
 }
 
 .navbar {
     display: flex; /* Utiliza flexbox para el diseño */
     justify-content: space-between; /* Distribuye los elementos horizontalmente */
     align-items: center; /* Centra verticalmente los elementos */
-}
-
-.logo {
-    font-size: 1.5em; /* Tamaño de fuente del logo */
+    padding: 1em 2em; /* Espaciado interno */
+    z-index: 10; /* Se le da prioridad a que aparezca encima */
 }
 
 .navbar-menu {
-    list-style-type: none; /* Quita los estilos de lista */
     display: flex; /* Utiliza flexbox para el diseño */
 }
 
 .navbar-menu li {
-    margin-right: 20px; /* Espacio entre elementos del menú */
+    margin-right: 2em; /* Espacio entre elementos del menú */
 }
 
 .navbar-menu li:last-child {
     margin-right: 0; /* Elimina el margen derecho del último elemento del menú */
 }
 
-/* b- reglas generales */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+.logo {
+    font-size: 3em;
 }
 
-/* selectores de clase */
-/** header */
 
-.header_logo {
-    margin-top: 3rem;
-    margin-left: 3rem;
-    text-align: left;
-    font-size: 2rem;
-    text-decoration: none;
-    position: absolute;
-    z-index: 2; 
-}
-
-.logo-color i{     
-     color: #f2f2f2;
-}
-
-/* body */
-
-.banner {
-    /*position: 0 0 0 0;*/
-    position: relative;
-    height: 100vh; /* Ajusta la altura según tus necesidades */
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+/* Body */
 
 .video_background {
+    /* Posiciona el video al comienzo para que ocupe toda la ventana */
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-}
 
+    width: 100vw; /* Ajusta el ancho del video a toda la ventana */
+    height: 100vh; /* Ajusta el alto del video a toda la ventana */
+
+    object-fit: cover; /* Ajusta el escaleo del video */
+
+    z-index: 0; /* Ajusta la sobreposicion con otros elementos del html */
+}
