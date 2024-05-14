@@ -5,8 +5,11 @@
     /* Paleta de colores */
     --primary-color:#9f3647;
     --secondary-color:#ffc098;
-    --third-color:#db4648;
-    --third-bis-color:#db4648f2;
+    --secondary-bis-color: #FF8C42;
+    --third-color:#ec3734;
+    --third-bis-color:#f16361;
+    --fourth-color: #a32e2c;
+    --fourth-bis-color: #d43d3a;
     --bg-nav-color:#181419;
     --bg-color:#4f31572c;
     --white-color: #fdf5ef;
@@ -46,7 +49,7 @@ li {
 
 /* Estilos para la barra de navegación */
 header {
-    background-color: var(--bg-nav-color); /* Color de fondo */
+    /* background-color: var(--bg-nav-color); /* Color de fondo */
     color: var(--white-color); /* Color del texto */
 }
 
@@ -79,18 +82,63 @@ header {
 
 body {
     background-color: var(--bg-color); /* Color de fondo (auxiliar) */
+
+    display: flex; /* Se usa flexbox para los elementos */
+    flex-direction: column; /* Se los orienta verticalmente */
+
+    box-sizing: border-box; /* Ajusta el borde de la caja del body */
+    width: 100vw; /* Fija el ancho de todo el body a la ventana */
+    height: 100vh; /* Fija el alto de todo el body a la ventana */
+}
+
+main {
+    display: flex; /* Se usa flexbox para los elementos */
+    flex-direction: column; /* Dirección vertical para el flex */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos */
+
+    box-sizing: border-box; /* Ajusta el borde de la caja del main al body */
+    width: 100%; /* Fija el ancho de todo el main al body */
+    height: 100%; /* Fija el alto de todo el main al body */
+}
+
+.mensajes {
+    margin-bottom: 3em; /* Espaciado con el banner de abajo */
+    display: contents; /* Display para que no funcionen como cajas los elementos */
+}
+
+h1, h2 {
+    color: var(--third-color); /* Color del texto */
+    text-align: center; /* Centra el texto */
+    /* Gradiente radial para simular sombra detras de las letras */
+    background: radial-gradient(rgba(10, 10, 10, 0.7), rgba(255, 255, 255, 0));
+    padding: 0.4em; /* Espaciado interno */
+    border-radius: 0.7em; /* Redondeo en el borde */
+}
+
+/* h1 refiere al id: #mensaje_grande */
+h1 > span {
+    color: var(--third-bis-color); /* Color para el resaltado de las palabras */
+}
+/* h2 refiere al id: #mensaje_chico */
+h2 {
+    padding-top: 0; /* Quita el espacio interno superior (porque ya lo tiene h1) */
+    color: var(--fourth-color); /* Color del texto */
 }
 
 .banner {
-    position: relative;
-
+    position: relative; /* Posiciona el elemento para que siga el flujo */
+    /* background-color: rgba(255,255,255,0.5); /* Color de fondo (auxiliar)*/
+    width: 100%; /* Fija el ancho de todo el banner al main */
+    padding-top: 2em; /* Espacio interno arriba */
+    padding-bottom: 2em; /* Espacio interno abajo */
 }
 
 .video_background {
     /* Posiciona el video al comienzo para que ocupe toda la ventana */
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0; /* Posiciona el borde superior del video arriba, en el comienzo de la ventana */
+    left: 0; /* Posiciona el borde izquierdo del video a la izquierda, en el comienzo de la ventana */
 
     width: 100vw; /* Ajusta el ancho del video a toda la ventana */
     height: 100vh; /* Ajusta el alto del video a toda la ventana */
