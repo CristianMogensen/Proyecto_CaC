@@ -1,0 +1,149 @@
+/* Estilos generales para todos los html's */
+
+
+:root{
+    /* Paleta de colores */
+    --primary-color:#9f3647;
+    --secondary-color:#ffc098;
+    --secondary-bis-color: #FF8C42;
+    --third-color:#ec3734;
+    --third-bis-color:#f16361;
+    --fourth-color: #a32e2c;
+    --fourth-bis-color: #d43d3a;
+    --bg-nav-color:#181419;
+    --bg-color:#4f31572c;
+    --white-color: #fdf5ef;
+
+    /* Fuentes */
+    --primary-font: "Poetsen One", sans-serif;
+    --secondary-font: Verdana, sans-serif;
+
+    font-family: var(--primary-font, --secondary-font);
+    font-weight: 400;
+    font-style: normal;
+    color: var(--primary-color);
+}
+
+/* General */
+
+* {
+    box-sizing: border-box;
+    /* Se quita el margen de los elementos, para que la barra de navegación
+    aparezca en el comienzo del html (arriba de la ventana): */
+    margin: 0 0;
+    z-index: 10; /* Se ponen los elementos encima del video de fondo */
+}
+
+/* Estilo de los links */
+a {
+    text-decoration: none; /* Se quita el subrayado */
+    text-decoration-color: inherit; /* Se hereda el color de la fuente del elemento padre */
+    color: inherit; /* Se hereda el color de la fuente del elemento padre */
+}
+
+li {
+    list-style-type: none; /* Quita los estilos de lista */
+}
+
+/* Header */
+
+/* Estilos para la barra de navegación */
+header {
+    /* background-color: var(--bg-nav-color); /* Color de fondo */
+    color: var(--white-color); /* Color del texto */
+}
+
+.navbar {
+    display: flex; /* Utiliza flexbox para el diseño */
+    justify-content: space-between; /* Distribuye los elementos horizontalmente */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 1em 2em; /* Espaciado interno */
+    z-index: 10; /* Se le da prioridad a que aparezca encima */
+}
+
+.navbar-menu {
+    display: flex; /* Utiliza flexbox para el diseño */
+}
+
+.navbar-menu li {
+    margin-right: 2em; /* Espacio entre elementos del menú */
+}
+
+.navbar-menu li:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último elemento del menú */
+}
+
+.logo {
+    font-size: 3em;
+}
+
+
+/* Body */
+
+body {
+    background-color: var(--bg-color); /* Color de fondo (auxiliar) */
+
+    display: flex; /* Se usa flexbox para los elementos */
+    flex-direction: column; /* Se los orienta verticalmente */
+
+    box-sizing: border-box; /* Ajusta el borde de la caja del body */
+    width: 100vw; /* Fija el ancho de todo el body a la ventana */
+    height: 100vh; /* Fija el alto de todo el body a la ventana */
+}
+
+main {
+    display: flex; /* Se usa flexbox para los elementos */
+    flex-direction: column; /* Dirección vertical para el flex */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos */
+
+    box-sizing: border-box; /* Ajusta el borde de la caja del main al body */
+    width: 100%; /* Fija el ancho de todo el main al body */
+    height: 100%; /* Fija el alto de todo el main al body */
+}
+
+.mensajes {
+    margin-bottom: 3em; /* Espaciado con el banner de abajo */
+    display: contents; /* Display para que no funcionen como cajas los elementos */
+}
+
+h1, h2 {
+    color: var(--third-color); /* Color del texto */
+    text-align: center; /* Centra el texto */
+    /* Gradiente radial para simular sombra detras de las letras */
+    background: radial-gradient(rgba(10, 10, 10, 0.7), rgba(255, 255, 255, 0));
+    padding: 0.4em; /* Espaciado interno */
+    border-radius: 0.7em; /* Redondeo en el borde */
+}
+
+/* h1 refiere al id: #mensaje_grande */
+h1 > span {
+    color: var(--third-bis-color); /* Color para el resaltado de las palabras */
+}
+/* h2 refiere al id: #mensaje_chico */
+h2 {
+    padding-top: 0; /* Quita el espacio interno superior (porque ya lo tiene h1) */
+    color: var(--fourth-color); /* Color del texto */
+}
+
+.banner {
+    position: relative; /* Posiciona el elemento para que siga el flujo */
+    /* background-color: rgba(255,255,255,0.5); /* Color de fondo (auxiliar)*/
+    width: 100%; /* Fija el ancho de todo el banner al main */
+    padding-top: 2em; /* Espacio interno arriba */
+    padding-bottom: 2em; /* Espacio interno abajo */
+}
+
+.video_background {
+    /* Posiciona el video al comienzo para que ocupe toda la ventana */
+    position: absolute;
+    top: 0; /* Posiciona el borde superior del video arriba, en el comienzo de la ventana */
+    left: 0; /* Posiciona el borde izquierdo del video a la izquierda, en el comienzo de la ventana */
+
+    width: 100vw; /* Ajusta el ancho del video a toda la ventana */
+    height: 100vh; /* Ajusta el alto del video a toda la ventana */
+
+    object-fit: cover; /* Ajusta el escaleo del video */
+
+    z-index: 0; /* Ajusta la sobreposicion con otros elementos del html */
+}
