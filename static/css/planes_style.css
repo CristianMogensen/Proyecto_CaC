@@ -134,7 +134,7 @@ h2 {
     padding-bottom: 2em; /* Espacio interno abajo */
 }
 
-.img_background {
+.video_background {
     /* Posiciona el video al comienzo para que ocupe toda la ventana */
     position: absolute;
     top: 0; /* Posiciona el borde superior del video arriba, en el comienzo de la ventana */
