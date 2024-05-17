@@ -4,8 +4,8 @@
 :root{
     /* Paleta de colores */
     --primary-color:#9f3647;
-    --secondary-color:#ffc098;
-    --secondary-bis-color: #FF8C42;
+    --secondary-color:#c7465b;
+    --secondary-bis-color: #d3697b;
     --third-color:#ec3734;
     --third-bis-color:#f16361;
     --fourth-color: #a32e2c;
@@ -13,6 +13,10 @@
     --bg-nav-color:#181419;
     --bg-color:#4f31572c;
     --white-color: #fdf5ef;
+
+    --color-bronce: #ff672b;
+    --color-oro: #ffc400;
+    --color-diamante: #2bc3ff;
 
     /* Fuentes */
     --primary-font: "Poetsen One", sans-serif;
@@ -28,6 +32,7 @@
 
 * {
     box-sizing: border-box;
+
     /* Se quita el margen de los elementos, para que la barra de navegación
     aparezca en el comienzo del html (arriba de la ventana): */
     margin: 0 0;
@@ -95,7 +100,7 @@ main {
     display: flex; /* Se usa flexbox para los elementos */
     flex-direction: column; /* Dirección vertical para el flex */
     align-items: center; /* Centra verticalmente los elementos */
-    justify-content: center; /* Centra horizontalmente los elementos */
+    justify-content: space-around; /* Centra horizontalmente los elementos */
 
     box-sizing: border-box; /* Ajusta el borde de la caja del main al body */
     width: 100%; /* Fija el ancho de todo el main al body */
@@ -108,35 +113,199 @@ main {
 }
 
 h1, h2 {
-    color: var(--third-color); /* Color del texto */
+    color: var(--secondary-color); /* Color del texto */
     text-align: center; /* Centra el texto */
-    /* Gradiente radial para simular sombra detras de las letras */
-    background: radial-gradient(rgba(10, 10, 10, 0.7), rgba(255, 255, 255, 0));
-    padding: 0.4em; /* Espaciado interno */
-    border-radius: 0.7em; /* Redondeo en el borde */
+    
+    position: relative; /* Establece posicion relativa para el pseudoelemento con el que se hace la sombra */
 }
 
 /* h1 refiere al id: #mensaje_grande */
 h1 > span {
-    color: var(--third-bis-color); /* Color para el resaltado de las palabras */
+    color: var(--secondary-bis-color); /* Color para el resaltado de las palabras */
 }
+
 /* h2 refiere al id: #mensaje_chico */
 h2 {
-    padding-top: 0; /* Quita el espacio interno superior (porque ya lo tiene h1) */
-    color: var(--fourth-color); /* Color del texto */
+    color: var(--secondary-bis-color)
+}
+
+h1::after {
+    /* Pseudoelemento con el que se hace la sombra detrás */
+    position: absolute; /* Posiciona de manera absoluta, respecto de la ultima posicion del elemento padre */
+    left: 0; /* Posiciona en el origen del elemento padre */
+    top: 0; /* Posiciona en el origen del elemento padre */
+
+    width: 100%; /* Ocupa todo el ancho del elemento padre */
+    height: 100%; /* Ocupa todo el alto del elemento padre */
+
+    background: rgba(15, 15, 15, 0.3); /* Color de la sombra */
+    color: rgba(15, 15, 15, 0.8); /* Color de la letra de la sombra */
+    border-radius: 10px; /* Redondea el borde */
+    filter: blur(5px); /* Difumina la sombra para que haga el efecto */
+
+    /* Se pone el mismo contenido que en h1, para que haya una sombra realizada
+    por el rectángulo del background y otra sombra realizada por el texto */
+    content: "Mira todos nuestros planes que tenemos para ofrecerte a tí.";
+
+    z-index: -1; /* Se lo posiciona atrás del elemento padre */
+}
+
+h2::after {
+    /* Pseudoelemento con el que se hace la sombra detrás */
+    position: absolute; /* Posiciona de manera absoluta, respecto de la ultima posicion del elemento padre */
+    left: 0; /* Posiciona en el origen del elemento padre */
+    top: 0; /* Posiciona en el origen del elemento padre */
+
+    width: 100%; /* Ocupa todo el ancho del elemento padre */
+    height: 100%; /* Ocupa todo el alto del elemento padre */
+
+    background: rgba(15, 15, 15, 0.3); /* Color de la sombra */
+    border-radius: 10px; /* Color de la letra de la sombra */
+    color: rgba(15, 15, 15, 0.8); /* Redondea el borde */
+    filter: blur(5px); /* Difumina la sombra para que haga el efecto */
+
+    /* Se pone el mismo contenido que en h1, para que haya una sombra realizada
+    por el rectángulo del background y otra sombra realizada por el texto */
+    content: "¡No dudes en contactarnos para comenzar hoy!";
+
+    z-index: -1; /* Se lo posiciona atrás del elemento padre */
 }
 
 .banner {
     position: relative; /* Posiciona el elemento para que siga el flujo */
     /* background-color: rgba(255,255,255,0.5); /* Color de fondo (auxiliar)*/
-    width: 100%; /* Fija el ancho de todo el banner al main */
-    padding-top: 2em; /* Espacio interno arriba */
-    padding-bottom: 2em; /* Espacio interno abajo */
+
+    display: flex; /* Se usa flexbox para los elementos */
+    flex-direction: column; /* Dirección vertical para el flex */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: space-around; /* Centra horizontalmente los elementos */
+}
+
+.banner_content {
+    display: flex; /* Utiliza flexbox */
+    flex-direction: column; /* Orienta verticalmente los elementos */
+    justify-content: space-around; /* Agrega espacio entre los elementos */
+}
+
+.planes {
+    padding: 0 0; /* Quita el padding para que se centre */
+
+    display: flex; /* Usa flexbox */
+    flex-direction: row; /* Direccion del flex en horizontal (fila) */
+    align-content: space-between; /* Espacio entre los elementos */
+    align-items: center; /* Se centran los elementos */
+    justify-content: center; /* Se centran los elementos */
+}
+
+.plan {
+    display: flex; /* Utiliza flexbox */
+    flex-direction: column; /* Orienta verticalmente los elementos */
+    background: linear-gradient(rgba(253, 245, 239, 1.0), rgba(253, 245, 239, 0.9));
+    margin-right: 2em;
+
+    width: 3in; /* Ancho de 3 pulgadas */
+    height: 3in; /* Alto de 3 pulgadas */
+
+    border-radius: 1em; /* Borde redondeado */
+}
+
+.plan.plan_bronce:hover {
+    /* Cambia el fondo al pasar el mouse por el elemento */
+    background: linear-gradient(rgba(253, 245, 239, 1.0), var(--color-bronce));
+}
+
+.plan.plan_oro:hover {
+    /* Cambia el fondo al pasar el mouse por el elemento */
+    background: linear-gradient(rgba(253, 245, 239, 1.0), var(--color-oro));
+}
+
+.plan.plan_diamante:hover {
+    /* Cambia el fondo al pasar el mouse por el elemento */
+    background: linear-gradient(rgba(253, 245, 239, 1.0), var(--color-diamante));
+}
+
+.plan:last-child {
+    margin-right: 0; /* Quita el margen derecho a la ultima tarjeta de plan */
+}
+
+h3 {
+    font-size: 20pt;
+    padding-top: 1em;
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+    font-size: 18pt;
+    
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+}
+
+span.plan_bronce {
+    color: var(--color-bronce); /* Resalta el color del plan */
+}
+
+span.plan_oro {
+    color: var(--color-oro); /* Resalta el color del plan */
+}
+
+span.plan_diamante {
+    color: var(--color-diamante); /* Resalta el color del plan */
+}
+
+.plan_item {
+    display: flex; /* Utiliza flexbox */
+    flex-direction: row; /* Orienta verticalmente los elementos */
+
+    padding-bottom: 1em;
+}
+
+.plan_item:last-child {
+    padding-bottom: 0;
+}
+
+.plan_item > i {
+    padding-right: 10px;
+}
+
+.plan_detalles {
+    padding: 1em 1em;
+    font-size: 13pt;
+    flex: 1; /* Ajusta el contenido al espacio restante en el elemento padre */
+}
+
+.banner_botones {
+    box-sizing: border-box;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#boton_contactar {
+    padding: 0.5em 3em;
+
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-family: var(--primary-font);
+    font-size: 14pt;
+    
+    border-radius: 1em;
+    border-width: 0;
+
+    transition: background-color 0.3s; /* Transiciona el color del background */
+}
+
+#boton_contactar:hover {
+     /* Cambia el color del background del botón al pasar el mouse */
+    background-color: var(--third-color);
 }
 
 .video_background {
     /* Posiciona el video al comienzo para que ocupe toda la ventana */
-    position: absolute;
+    position: absolute; 
     top: 0; /* Posiciona el borde superior del video arriba, en el comienzo de la ventana */
     left: 0; /* Posiciona el borde izquierdo del video a la izquierda, en el comienzo de la ventana */
 
