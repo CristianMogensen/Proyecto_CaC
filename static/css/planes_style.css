@@ -291,9 +291,10 @@ span.plan_diamante {
     color: var(--white-color);
     font-family: var(--primary-font);
     font-size: 14pt;
-    
+    cursor: pointer; /* Mouse con manita para hacer click al pasar el mouse */
+
     border-radius: 1em;
-    border-width: 0;
+    border: none;
 
     transition: background-color 0.3s; /* Transiciona el color del background */
 }
