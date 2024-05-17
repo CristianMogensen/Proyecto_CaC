@@ -147,3 +147,43 @@ h2 {
 
     z-index: 0; /* Ajusta la sobreposicion con otros elementos del html */
 }
+
+/*Modificacion de las imagenes index JULIAN*/
+.container{
+    width: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.container img{
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.container:hover img{
+    scale: 1.03;
+}
+
+.container:hover .content{
+    top: 0;
+}
+
+.content{
+    position: absolute;
+    top:-100%;
+    left: 0;
+    text-align: justify;
+    color: #fdf5ef;
+    background-color: rgba(10, 10, 10, 0.7);
+    transition: all .5s;
+}
+
+.content h3{
+    text-align: center;
+    border-bottom: 1px solid;
+}
+
+.tendencias{
+    display: flex;
+    flex-direction: row;
+}
