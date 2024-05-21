@@ -108,22 +108,62 @@ main {
 }
 
 h1, h2 {
-    color: var(--third-color); /* Color del texto */
+    color: var(--secondary-color); /* Color del texto */
     text-align: center; /* Centra el texto */
-    /* Gradiente radial para simular sombra detras de las letras */
-    background: radial-gradient(rgba(10, 10, 10, 0.7), rgba(255, 255, 255, 0));
-    padding: 0.4em; /* Espaciado interno */
-    border-radius: 0.7em; /* Redondeo en el borde */
+    
+    position: relative; /* Establece posicion relativa para el pseudoelemento con el que se hace la sombra */
 }
 
 /* h1 refiere al id: #mensaje_grande */
 h1 > span {
-    color: var(--third-bis-color); /* Color para el resaltado de las palabras */
+    color: var(--secondary-bis-color); /* Color para el resaltado de las palabras */
 }
+
 /* h2 refiere al id: #mensaje_chico */
 h2 {
-    padding-top: 0; /* Quita el espacio interno superior (porque ya lo tiene h1) */
-    color: var(--fourth-color); /* Color del texto */
+    color: var(--secondary-bis-color)
+}
+
+h1::after {
+    /* Pseudoelemento con el que se hace la sombra detrás */
+    position: absolute; /* Posiciona de manera absoluta, respecto de la ultima posicion del elemento padre */
+    left: 0; /* Posiciona en el origen del elemento padre */
+    top: 0; /* Posiciona en el origen del elemento padre */
+
+    width: 100%; /* Ocupa todo el ancho del elemento padre */
+    height: 100%; /* Ocupa todo el alto del elemento padre */
+
+    background: rgba(15, 15, 15, 0.3); /* Color de la sombra */
+    color: rgba(15, 15, 15, 0.8); /* Color de la letra de la sombra */
+    border-radius: 10px; /* Redondea el borde */
+    filter: blur(5px); /* Difumina la sombra para que haga el efecto */
+
+    /* Se pone el mismo contenido que en h1, para que haya una sombra realizada
+    por el rectángulo del background y otra sombra realizada por el texto */
+    content: "¡Entérate de todos los beneficios que tendrás con nosotros!";
+
+    z-index: -1; /* Se lo posiciona atrás del elemento padre */
+}
+
+h2::after {
+    /* Pseudoelemento con el que se hace la sombra detrás */
+    position: absolute; /* Posiciona de manera absoluta, respecto de la ultima posicion del elemento padre */
+    left: 0; /* Posiciona en el origen del elemento padre */
+    top: 0; /* Posiciona en el origen del elemento padre */
+
+    width: 100%; /* Ocupa todo el ancho del elemento padre */
+    height: 100%; /* Ocupa todo el alto del elemento padre */
+
+    background: rgba(15, 15, 15, 0.3); /* Color de la sombra */
+    border-radius: 10px; /* Color de la letra de la sombra */
+    color: rgba(15, 15, 15, 0.8); /* Redondea el borde */
+    filter: blur(5px); /* Difumina la sombra para que haga el efecto */
+
+    /* Se pone el mismo contenido que en h1, para que haya una sombra realizada
+    por el rectángulo del background y otra sombra realizada por el texto */
+    content: "Déjanos tu correo y nos contactaremos a la brevedad.";
+
+    z-index: -1; /* Se lo posiciona atrás del elemento padre */
 }
 
 .banner {
@@ -132,6 +172,62 @@ h2 {
     width: 100%; /* Fija el ancho de todo el banner al main */
     padding-top: 2em; /* Espacio interno arriba */
     padding-bottom: 2em; /* Espacio interno abajo */
+}
+
+form {
+    background: var(--white-color);
+    border-radius: 1em;
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+}
+
+form ul {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+input {
+    font-family: var(--primary-font);
+}
+
+input[type="email"], input[type="text"] {
+    padding-top: 3px;
+    border-radius: 4px;
+    padding-bottom: 3px;
+}
+
+textarea {
+    font-family: var(--primary-font);
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 8px 8px;
+    width: 8cm;
+    resize: none;
+}
+
+li > button {
+    padding: 0.5em 3em;
+
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-family: var(--primary-font);
+    font-size: 12pt;
+    cursor: pointer; /* Mouse con manita para hacer click al pasar el mouse */
+
+    border-radius: 1em;
+    border: none;
+
+    transition: background-color 0.3s; /* Transiciona el color del background */
+}
+
+li > button:hover {
+     /* Cambia el color del background del botón al pasar el mouse */
+    background-color: var(--third-color);
 }
 
 .img_background {
