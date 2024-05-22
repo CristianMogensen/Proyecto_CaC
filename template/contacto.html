@@ -41,13 +41,77 @@
     <main>
         <div class="mensajes">
             <h1 id="mensaje_grande">
-                Contáctanos y entérate de todos nuestros planes de pago
+                ¡Entérate de todos los beneficios que tendrás con nosotros!
             </h1>
             <h2 id="mensaje_chico">
-                ¡y muchos beneficios!
+                Déjanos tu correo y nos contactaremos a la brevedad.
             </h2>
         </div>
-        
+        <!--<form action="" method="post">-->
+        <form>
+            <ul>
+                <li>Datos personales:</li>
+                <li>
+                    <ul class="form_datos">
+                        <li>
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="usuario_nombre" placeholder="Ingrese aquí su nombre."/>
+                        </li>
+                        <li>
+                            <label for="apellido">Apellido:</label>
+                            <input type="text" id="apellido" name="usuario_apellido" placeholder="Ingrese aquí su apellido."/>
+                        </li>
+                        <li>
+                            <label for="mail">E-mail:</label>
+                            <input type="email" id="mail" name="usuario_email" placeholder="Ingrese aquí su e-mail."/>
+                        </li>
+                    </ul>
+                </li>
+                <li>Plan:</li>
+                <li>
+                    <ul class="form_plan">
+                        <li>
+                            <input type="radio" id="plan_bronce" name="plan" value="Bronce">
+                            <label for="plan_bronce"> Bronce </label>
+                        </li>
+                        <li>
+                            <input type="radio" id="plan_oro" name="plan" value="Oro">
+                            <label for="plan_oro"> Oro </label>
+                        </li>
+                        <li>
+                            <input type="radio" id="plan_diamante" name="plan" value="Diamante">
+                            <label for="plan_diamante"> Diamante </label>
+                        </li>
+                    </ul>
+                </li>
+                <li>Consulta:</li>
+                <li>
+                    <ul class="form_consulta">
+                        <li>
+                            <input type="checkbox" id="consulta_pagos" name="consulta_pagos" value="Pagos">
+                            <label for="consulta_pago"> Suscripción y formas de pago </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="consulta_problemas" name="consulta_problemas" value="Problemas">
+                            <label for="consulta_problemas"> Problemas técnicos </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="consulta_varios" name="consulta_varios" value="Varios">
+                            <label for="consulta_varios"> Consultas varias </label>
+                        </li>
+                    </ul>
+                </li>
+                <li>Comentarios:</li>
+                <li>
+                    <textarea id="comentario" name="usuario_comentario"
+                    placeholder="Ingrese un mensaje adicional..."
+                    maxlength="500"></textarea>
+                </li>
+                <li>
+                    <button type="submit">Enviar</button>
+                </li>
+            </ul>
+        </form>
     </main>    
 
     <!-- Imagen de fondo obtenido gratuitamente de: -->
