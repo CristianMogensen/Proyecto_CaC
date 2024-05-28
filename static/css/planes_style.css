@@ -317,3 +317,45 @@ span.plan_diamante {
 
     z-index: 0; /* Ajusta la sobreposicion con otros elementos del html */
 }
+
+@media screen and (min-width: 900px) {
+    
+    body {
+        background-color: var(--bg-color); /* Color de fondo (auxiliar) */
+    
+        display: flex; /* Se usa flexbox para los elementos */
+        flex-direction: column; /* Se los orienta verticalmente */
+    
+        box-sizing: border-box; /* Ajusta el borde de la caja del body */
+        width: 100vw; /* Fija el ancho de todo el body a la ventana */
+        height: 100vh; /* Fija el alto de todo el body a la ventana */
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 899px) {
+    
+    body {
+        background-color: var(--bg-color); /* Color de fondo (auxiliar) */
+    
+        display: flex; /* Se usa flexbox para los elementos */
+        flex-direction: column; /* Se los orienta verticalmente */
+    
+        box-sizing: border-box; /* Ajusta el borde de la caja del body */
+        width: 100vw; /* Fija el ancho de todo el body a la ventana */
+        height: 100vh; /* Fija el alto de todo el body a la ventana */
+    }
+}
+
+@media screen and (max-width: 599px) {
+    
+    body {
+        background-color: var(--bg-color); /* Color de fondo (auxiliar) */
+    
+        display: flex; /* Se usa flexbox para los elementos */
+        flex-direction: column; /* Se los orienta verticalmente */
+    
+        box-sizing: border-box; /* Ajusta el borde de la caja del body */
+        width: 100vw; /* Fija el ancho de todo el body a la ventana */
+    }
+}
+
