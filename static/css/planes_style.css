@@ -369,9 +369,73 @@ span.plan_diamante {
         height: 100vh; /* Fija el alto de todo el body a la ventana */
     }
 
-    .mensajes {
-        margin-bottom: 3em; /* Espaciado con el banner de abajo */
-        display: contents; /* Display para que no funcionen como cajas los elementos */
+    #mensaje_chico {
+        margin-top: 1em;
+    }
+
+    .banner {
+        position: relative; /* Posiciona el elemento para que siga el flujo */
+        /* background-color: rgba(255,255,255,0.5); /* Color de fondo (auxiliar)*/
+    
+        display: flex; /* Se usa flexbox para los elementos */
+        flex-direction: column; /* Dirección vertical para el flex */
+        align-items: center; /* Centra verticalmente los elementos */
+        justify-content: space-around; /* Centra horizontalmente los elementos */
+    }
+    
+    .banner_content {
+        display: flex; /* Utiliza flexbox */
+        flex-direction: column; /* Orienta verticalmente los elementos */
+        justify-content: space-around; /* Agrega espacio entre los elementos */
+    }
+    
+    .planes {
+        padding: 0 0; /* Quita el padding para que se centre */
+    
+        display: flex; /* Usa flexbox */
+        flex-direction: column; /* Direccion del flex en horizontal (fila) */
+        align-content: space-between; /* Espacio entre los elementos */
+        align-items: center; /* Se centran los elementos */
+        justify-content: center; /* Se centran los elementos */
+    }
+    
+    .plan {
+        display: flex; /* Utiliza flexbox */
+        flex-direction: column; /* Orienta verticalmente los elementos */
+        background: linear-gradient(rgba(253, 245, 239, 1.0), rgba(253, 245, 239, 0.9));
+
+        width: 100%;
+        
+        padding: 5px;
+
+        margin-bottom: 1em;
+    }
+
+    .plan:last-child {
+        margin-bottom: 0;
+    }
+
+    .plan_item > i {
+        padding-right: 10px;
+    }
+    
+    .plan_detalles {
+        margin-left: 1em;
+        margin-right: 1em;
+        flex: 1; /* Ajusta el contenido al espacio restante en el elemento padre */
+    }
+
+    .plan_item {
+        display: flex; /* Utiliza flexbox */
+        flex-direction: row; /* Orienta verticalmente los elementos */
+    }
+
+    h3 {
+        text-align: center;
+    }
+    
+    h4 {
+        text-align: center;
     }
 }
 
