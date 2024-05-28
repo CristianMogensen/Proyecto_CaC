@@ -58,30 +58,6 @@ header {
     color: var(--white-color); /* Color del texto */
 }
 
-.navbar {
-    display: flex; /* Utiliza flexbox para el diseño */
-    justify-content: space-between; /* Distribuye los elementos horizontalmente */
-    align-items: center; /* Centra verticalmente los elementos */
-    padding: 1em 2em; /* Espaciado interno */
-    z-index: 10; /* Se le da prioridad a que aparezca encima */
-}
-
-.navbar-menu {
-    display: flex; /* Utiliza flexbox para el diseño */
-}
-
-.navbar-menu li {
-    margin-right: 2em; /* Espacio entre elementos del menú */
-}
-
-.navbar-menu li:last-child {
-    margin-right: 0; /* Elimina el margen derecho del último elemento del menú */
-}
-
-.logo {
-    font-size: 3em;
-}
-
 
 /* Body */
 
@@ -107,10 +83,7 @@ main {
     height: 100%; /* Fija el alto de todo el main al body */
 }
 
-.mensajes {
-    margin-bottom: 3em; /* Espaciado con el banner de abajo */
-    display: contents; /* Display para que no funcionen como cajas los elementos */
-}
+
 
 h1, h2 {
     color: var(--secondary-color); /* Color del texto */
@@ -171,44 +144,6 @@ h2::after {
     z-index: -1; /* Se lo posiciona atrás del elemento padre */
 }
 
-.banner {
-    position: relative; /* Posiciona el elemento para que siga el flujo */
-    /* background-color: rgba(255,255,255,0.5); /* Color de fondo (auxiliar)*/
-
-    display: flex; /* Se usa flexbox para los elementos */
-    flex-direction: column; /* Dirección vertical para el flex */
-    align-items: center; /* Centra verticalmente los elementos */
-    justify-content: space-around; /* Centra horizontalmente los elementos */
-}
-
-.banner_content {
-    display: flex; /* Utiliza flexbox */
-    flex-direction: column; /* Orienta verticalmente los elementos */
-    justify-content: space-around; /* Agrega espacio entre los elementos */
-}
-
-.planes {
-    padding: 0 0; /* Quita el padding para que se centre */
-
-    display: flex; /* Usa flexbox */
-    flex-direction: row; /* Direccion del flex en horizontal (fila) */
-    align-content: space-between; /* Espacio entre los elementos */
-    align-items: center; /* Se centran los elementos */
-    justify-content: center; /* Se centran los elementos */
-}
-
-.plan {
-    display: flex; /* Utiliza flexbox */
-    flex-direction: column; /* Orienta verticalmente los elementos */
-    background: linear-gradient(rgba(253, 245, 239, 1.0), rgba(253, 245, 239, 0.9));
-    margin-right: 2em;
-
-    width: 3in; /* Ancho de 3 pulgadas */
-    height: 3in; /* Alto de 3 pulgadas */
-
-    border-radius: 1em; /* Borde redondeado */
-}
-
 .plan.plan_bronce:hover {
     /* Cambia el fondo al pasar el mouse por el elemento */
     background: linear-gradient(rgba(253, 245, 239, 1.0), var(--color-bronce));
@@ -228,20 +163,6 @@ h2::after {
     margin-right: 0; /* Quita el margen derecho a la ultima tarjeta de plan */
 }
 
-h3 {
-    font-size: 20pt;
-    padding-top: 1em;
-    text-align: center;
-}
-
-h4 {
-    text-align: center;
-    font-size: 18pt;
-    
-    padding-top: 0.3em;
-    padding-bottom: 0.3em;
-}
-
 span.plan_bronce {
     color: var(--color-bronce); /* Resalta el color del plan */
 }
@@ -252,27 +173,6 @@ span.plan_oro {
 
 span.plan_diamante {
     color: var(--color-diamante); /* Resalta el color del plan */
-}
-
-.plan_item {
-    display: flex; /* Utiliza flexbox */
-    flex-direction: row; /* Orienta verticalmente los elementos */
-
-    padding-bottom: 1em;
-}
-
-.plan_item:last-child {
-    padding-bottom: 0;
-}
-
-.plan_item > i {
-    padding-right: 10px;
-}
-
-.plan_detalles {
-    padding: 1em 1em;
-    font-size: 13pt;
-    flex: 1; /* Ajusta el contenido al espacio restante en el elemento padre */
 }
 
 .banner_botones {
@@ -319,7 +219,30 @@ span.plan_diamante {
 }
 
 @media screen and (min-width: 900px) {
-    
+    .navbar {
+        display: flex; /* Utiliza flexbox para el diseño */
+        justify-content: space-between; /* Distribuye los elementos horizontalmente */
+        align-items: center; /* Centra verticalmente los elementos */
+        padding: 1em 2em; /* Espaciado interno */
+        z-index: 10; /* Se le da prioridad a que aparezca encima */
+    }
+
+    .navbar-menu {
+        display: flex; /* Utiliza flexbox para el diseño */
+    }
+
+    .navbar-menu li {
+        margin-right: 2em; /* Espacio entre elementos del menú */
+    }
+
+    .navbar-menu li:last-child {
+        margin-right: 0; /* Elimina el margen derecho del último elemento del menú */
+    }
+
+    .logo {
+        font-size: 3em;
+    }
+
     body {
         background-color: var(--bg-color); /* Color de fondo (auxiliar) */
     
@@ -329,10 +252,111 @@ span.plan_diamante {
         box-sizing: border-box; /* Ajusta el borde de la caja del body */
         width: 100vw; /* Fija el ancho de todo el body a la ventana */
         height: 100vh; /* Fija el alto de todo el body a la ventana */
+    }
+
+    .mensajes {
+        margin-bottom: 3em; /* Espaciado con el banner de abajo */
+        display: contents; /* Display para que no funcionen como cajas los elementos */
+    }
+
+    .banner {
+        position: relative; /* Posiciona el elemento para que siga el flujo */
+        /* background-color: rgba(255,255,255,0.5); /* Color de fondo (auxiliar)*/
+    
+        display: flex; /* Se usa flexbox para los elementos */
+        flex-direction: column; /* Dirección vertical para el flex */
+        align-items: center; /* Centra verticalmente los elementos */
+        justify-content: space-around; /* Centra horizontalmente los elementos */
+    }
+    
+    .banner_content {
+        display: flex; /* Utiliza flexbox */
+        flex-direction: column; /* Orienta verticalmente los elementos */
+        justify-content: space-around; /* Agrega espacio entre los elementos */
+    }
+
+    h3 {
+        font-size: 20pt;
+        padding-top: 1em;
+        text-align: center;
+    }
+    
+    h4 {
+        text-align: center;
+        font-size: 18pt;
+        
+        padding-top: 0.3em;
+        padding-bottom: 0.3em;
+    }
+    
+    .planes {
+        padding: 0 0; /* Quita el padding para que se centre */
+    
+        display: flex; /* Usa flexbox */
+        flex-direction: row; /* Direccion del flex en horizontal (fila) */
+        align-content: space-between; /* Espacio entre los elementos */
+        align-items: center; /* Se centran los elementos */
+        justify-content: center; /* Se centran los elementos */
+    }
+    
+    .plan {
+        display: flex; /* Utiliza flexbox */
+        flex-direction: column; /* Orienta verticalmente los elementos */
+        background: linear-gradient(rgba(253, 245, 239, 1.0), rgba(253, 245, 239, 0.9));
+        margin-right: 2em;
+    
+        width: 3in; /* Ancho de 3 pulgadas */
+        height: 3in; /* Alto de 3 pulgadas */
+    
+        border-radius: 1em; /* Borde redondeado */
+    }
+
+    .plan_item > i {
+        padding-right: 10px;
+    }
+    
+    .plan_detalles {
+        padding: 1em 1em;
+        font-size: 13pt;
+        flex: 1; /* Ajusta el contenido al espacio restante en el elemento padre */
+    }
+
+    .plan_item {
+        display: flex; /* Utiliza flexbox */
+        flex-direction: row; /* Orienta verticalmente los elementos */
+    
+        padding-bottom: 1em;
+    }
+    
+    .plan_item:last-child {
+        padding-bottom: 0;
     }
 }
 
 @media screen and (min-width: 600px) and (max-width: 899px) {
+    .navbar {
+        display: flex; /* Utiliza flexbox para el diseño */
+        justify-content: space-between; /* Distribuye los elementos horizontalmente */
+        align-items: center; /* Centra verticalmente los elementos */
+        padding: 1em 2em; /* Espaciado interno */
+        z-index: 10; /* Se le da prioridad a que aparezca encima */
+    }
+
+    .navbar-menu {
+        display: flex; /* Utiliza flexbox para el diseño */
+    }
+
+    .navbar-menu li {
+        margin-right: 2em; /* Espacio entre elementos del menú */
+    }
+
+    .navbar-menu li:last-child {
+        margin-right: 0; /* Elimina el margen derecho del último elemento del menú */
+    }
+
+    .logo {
+        font-size: 3em;
+    }
     
     body {
         background-color: var(--bg-color); /* Color de fondo (auxiliar) */
@@ -344,10 +368,45 @@ span.plan_diamante {
         width: 100vw; /* Fija el ancho de todo el body a la ventana */
         height: 100vh; /* Fija el alto de todo el body a la ventana */
     }
+
+    .mensajes {
+        margin-bottom: 3em; /* Espaciado con el banner de abajo */
+        display: contents; /* Display para que no funcionen como cajas los elementos */
+    }
 }
 
 @media screen and (max-width: 599px) {
+    .navbar {
+        display: flex; /* Utiliza flexbox para el diseño */
+        flex-direction: column;
+        justify-content: space-between; /* Distribuye los elementos horizontalmente */
+        align-items: center; /* Centra verticalmente los elementos */
+        padding: 1em 2em; /* Espaciado interno */
+        z-index: 10; /* Se le da prioridad a que aparezca encima */
+    }
+
+    .navbar-menu {
+        display: flex; /* Utiliza flexbox para el diseño */
+        flex-direction: column; /* Orienta verticalmente los elementos */
+        padding: 0 0; /* Quita el padding del ul */
+    }
     
+    .navbar-menu li {
+        margin-top: 1.5em; /* Espacio entre elementos del menú */
+        text-align: center;
+    }
+
+    .navbar li:last-child {
+        margin-top: 1.5em;
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+    
+    .logo {
+        font-size: 3em;
+    }
+
     body {
         background-color: var(--bg-color); /* Color de fondo (auxiliar) */
     
@@ -356,6 +415,69 @@ span.plan_diamante {
     
         box-sizing: border-box; /* Ajusta el borde de la caja del body */
         width: 100vw; /* Fija el ancho de todo el body a la ventana */
+    }
+
+    #mensaje_chico {
+        margin-top: 1em;
+    }
+
+    .banner {
+        position: relative; /* Posiciona el elemento para que siga el flujo */
+        /* background-color: rgba(255,255,255,0.5); /* Color de fondo (auxiliar)*/
+    
+        display: flex; /* Se usa flexbox para los elementos */
+        flex-direction: column; /* Dirección vertical para el flex */
+        align-items: center; /* Centra verticalmente los elementos */
+        justify-content: space-around; /* Centra horizontalmente los elementos */
+    }
+    
+    .banner_content {
+        display: flex; /* Utiliza flexbox */
+        flex-direction: column; /* Orienta verticalmente los elementos */
+        justify-content: space-around; /* Agrega espacio entre los elementos */
+    }
+    
+    .planes {
+        padding: 0 0; /* Quita el padding para que se centre */
+    
+        display: flex; /* Usa flexbox */
+        flex-direction: column; /* Direccion del flex en horizontal (fila) */
+        align-content: space-between; /* Espacio entre los elementos */
+        align-items: center; /* Se centran los elementos */
+        justify-content: center; /* Se centran los elementos */
+    }
+    
+    .plan {
+        display: flex; /* Utiliza flexbox */
+        flex-direction: column; /* Orienta verticalmente los elementos */
+        background: linear-gradient(rgba(253, 245, 239, 1.0), rgba(253, 245, 239, 0.9));
+
+        width: 100%;
+        
+        padding: 5px;
+    }
+
+    .plan_item > i {
+        padding-right: 10px;
+    }
+    
+    .plan_detalles {
+        margin-left: 1em;
+        margin-right: 1em;
+        flex: 1; /* Ajusta el contenido al espacio restante en el elemento padre */
+    }
+
+    .plan_item {
+        display: flex; /* Utiliza flexbox */
+        flex-direction: row; /* Orienta verticalmente los elementos */
+    }
+
+    h3 {
+        text-align: center;
+    }
+    
+    h4 {
+        text-align: center;
     }
 }
 
