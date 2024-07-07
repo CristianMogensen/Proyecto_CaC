@@ -1,0 +1,17 @@
+{
+  "name": "proyecto_cac",
+  "version": "1.0.0",
+  "description": "Proyecto final para el curso de Codo a Codo. La idea es hacer un sitio que contenga un catálogo de películas.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --watch server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mysql2": "^3.10.2"
+  }
+}
