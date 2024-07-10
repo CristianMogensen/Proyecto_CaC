@@ -31,7 +31,7 @@ router.put("/usuarios/:idusuario", controllerUsuario.modificarUsuario);
 
 // Peticiones DELETE
 router.delete("/planes/:idplanes", controllerPlanes.eliminarPlan);
-router.delete("/catalogo/:idpelicula", controllerCatalogo.eliminarPelicula);
+router.delete("/catalogo/:idcatalogo", controllerCatalogo.eliminarPelicula);
 router.delete("/usuarios/:idusuario", controllerUsuario.eliminarUsuario);
 
 
