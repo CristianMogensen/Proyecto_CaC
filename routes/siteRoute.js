@@ -8,7 +8,7 @@ const controllerUsuario = require("../controllers/controllerUsuario");
 
 // Peticiones GET
 router.get("/planes", controllerPlanes.consultarPlanes);
-router.get("/planes/:idplanes", controllerPlanes.consultarPlanes);
+router.get("/planes/:idplanes", controllerPlanes.consultarPlanPorId);
 
 router.get("/catalogo", controllerCatalogo.consultarCatalogo);
 router.get("/catalogo/:idcatalogo", controllerCatalogo.consultarPeliculaPorId);

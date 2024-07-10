@@ -55,7 +55,7 @@ const modificarPlan = (req, res) => {
     const sql = 'UPDATE planes SET nombre = ?, precio = ? WHERE idplanes = ?';
 
     // Pasamos la consulta
-    db.query(sql, [nombre, precio], (err, result) => {
+    db.query(sql, [nombre, precio, idplanes], (err, result) => {
         // Si sucede un error.
         if (err) {console.log(err);}
 
