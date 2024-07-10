@@ -1,13 +1,13 @@
 const mysql=require("mysql2");
 
+// Configuración de la conexión.
 const connection=mysql.createConnection({
     host:"localhost",
     user:"root",//usuario de workbench
     password:"Massardi1993",//contraseña del workbench
-    port:3306,
+    port:3306
 });
 
-//
 connection.connect((err)=>{
     //Programamos que sucede si se produce un error
     if(err){
@@ -17,8 +17,8 @@ connection.connect((err)=>{
     console.log(`Estado de conexion: conectado`);
 
     //Verificamos si existe la base de datos, si no existe la creamos
-    const sql="CREATE DATABASE IF NOT EXISTS peliculas2";
-    connection.query(sql,(err,result)=>{
+    const sqlQueryCreate="CREATE DATABASE IF NOT EXISTS peliculas2";
+    connection.query(sqlQueryCreate,(err,result)=>{
         //Si se produce un error al crear la base de datos
         if(err){
             console.error(`Se produjo un error al crear la base de datos: ${err}`);
@@ -28,16 +28,15 @@ connection.connect((err)=>{
         //Si hubo exito al crear la base de datos
         console.log(`Base de datos: CREADA/EXISTENTE/GARANTIZADA`);
 
-        //Nos ubicamos en la base de datos creada
-        //changeUser nos conserva dentro de una base de datos o cambiarnos
         connection.changeUser({database: "peliculas2"}, (err)=>{
             //Que sucederia si se produce un error
             if(err){
                 console.error(`Error al cambia a la base de datos peliculas2: ${err}`);
                 return ;
             }
-            //Tabla usuarios
-            const createTableUsuarios=`
+            
+            //Consulta SQL para la creación de la tabla Usuarios
+            const createTableUsuarios = `
                 CREATE TABLE IF NOT EXISTS usuarios (
                     idusuarios int NOT NULL AUTO_INCREMENT,
                     nombre varchar(45) NOT NULL,
@@ -50,9 +49,9 @@ connection.connect((err)=>{
                     KEY fk_usuarios_planes_idx (plan),
                     CONSTRAINT fk_usuarios_planes FOREIGN KEY (plan) REFERENCES planes (idplanes)
                     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
-            `
-            //Tabla catalogo
-            const createTableCatalogo=`
+            `;
+            //Consulta SQL para la creación de la tabla Catalogo
+            const createTableCatalogo = `
                 CREATE TABLE IF NOT EXISTS catalogo  (
                     idcatalogo int NOT NULL AUTO_INCREMENT,
                     pelicula varchar(45) NOT NULL,
@@ -64,8 +63,8 @@ connection.connect((err)=>{
                     CONSTRAINT fk_catalogo_planes FOREIGN KEY (plan) REFERENCES planes (idplanes)
                     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
             `;
-            //Tabla Planes
-            const createTablePlanes=`
+            //Consulta SQL para la creación de la tabla Planes
+            const createTablePlanes = `
                 CREATE TABLE IF NOT EXISTS planes (
                     nombre varchar(15) DEFAULT NULL,
                     precio decimal(10,0) DEFAULT NULL,
@@ -73,43 +72,47 @@ connection.connect((err)=>{
                     PRIMARY KEY (idplanes)
                     ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
             `;
-            //Pasamos la consulta de la tabla usuarios a la base de datos
+
+            // Consultas a la base de datos para las creaciones de las tablas.
+            // Creación Tabla Usuarios.
             connection.query(createTableUsuarios,(err,result)=>{
                 //Si se produce un error al crear la tabla
                 if(err){
-                    console.error(`Se produjo un error al crear la tabla: ${err}`);
+                    console.error(`Se produjo un error al crear la tabla Usuarios: ${err}`);
                     return ;
                 }
 
                 //Si hubo exito al crear la base de datos
-                console.log(`Tabla: CREADA/EXISTENTE/GARANTIZADA`);
+                console.log(`Tabla Usuarios: CREADA/EXISTENTE/GARANTIZADA`);
             });
 
-            //Consulta de la tabla planes
+            // Creación Tabla Planes.
             connection.query(createTablePlanes,(err,result)=>{
                 //Si se produce un error al crear la tabla
                 if(err){
-                    console.error(`Se produjo un error al crear la tabla: ${err}`);
+                    console.error(`Se produjo un error al crear la tabla Planes: ${err}`);
                     return ;
                 }
 
                 //Si hubo exito al crear la base de datos
-                console.log(`Tabla: CREADA/EXISTENTE/GARANTIZADA`);
+                console.log(`Tabla Planes: CREADA/EXISTENTE/GARANTIZADA`);
             });
-            //Consulta de la tabla catalogo
+
+            // Creación Tabla Catalogo.
             connection.query(createTableCatalogo,(err,result)=>{
                 //Si se produce un error al crear la tabla
                 if(err){
-                    console.error(`Se produjo un error al crear la tabla: ${err}`);
+                    console.error(`Se produjo un error al crear la tabla Catalogo: ${err}`);
                     return ;
                 }
 
                 //Si hubo exito al crear la base de datos
-                console.log(`Tabla: CREADA/EXISTENTE/GARANTIZADA`);
+                console.log(`Tabla Catalogo: CREADA/EXISTENTE/GARANTIZADA`);
             });
         });
     });
 
 });
+
 //Exportacion del modulo
-module.exports=connection;
+module.exports = connection;
